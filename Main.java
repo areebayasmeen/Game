@@ -2,15 +2,38 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Date releaseDate=new Date(20,12,2002);
-        Date debutyear=new Date(20,12,2002);
+        int counter=0;
+        int score;
+        Game game=new Game();
+        System.out.println("guess a number");
+        game.takeUserInput();
+        while(!game.isCorrect()){
+        if(game.isCorrect())
+        {
+            System.out.println("you win");
+        }
+        else{
+            game.guess();
+            game.takeUserInput();
 
-        Singer singer=new Singer("joe","male","canadian",debutyear.toString());
-       /* System.out.println("our singer:");
-        System.out.println(singer);*/
-        Music music=new Music("myLife","two_years","classic music",releaseDate.toString(),singer);
-        System.out.println(music);
-
-
+            counter++;
+        }}
+        if (counter<=5)
+        {
+            score=90;
+        }
+        else if (counter<=10){
+            score=70;
+        }
+        else if (counter<=20){
+            score=50;
+        }
+        else if (counter<=40){
+            score=20;
+        }
+        else {
+            score=5;
+        }
+        System.out.println("your score is "+score);
     }
 }
